@@ -9,6 +9,10 @@ using RoR2;
 namespace LunarScrap;
 
 [BepInPlugin(PluginGUID, PluginName, PluginVersion)]
+[BepInDependency("RiskofThunder-HookGenPatcher-1.2.9", BepInDependency.DependencyFlags.HardDependency)]
+[BepInDependency("RiskofThunder-R2API_Items-1.0.8", BepInDependency.DependencyFlags.HardDependency)]
+[BepInDependency("RiskofThunder-R2API_Language-1.1.0", BepInDependency.DependencyFlags.HardDependency)]
+[BepInDependency("RiskofThunder-R2API_Prefab-1.1.1", BepInDependency.DependencyFlags.HardDependency)]
 [BepInDependency(LookingGlass.PluginInfo.PLUGIN_GUID, BepInDependency.DependencyFlags.SoftDependency)]
 [BepInDependency(MoreStats.MoreStatsPlugin.guid, BepInDependency.DependencyFlags.SoftDependency)]
 public class LunarScrapPlugin : BaseUnityPlugin
