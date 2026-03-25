@@ -1,28 +1,35 @@
 # Lunar Scrap
 
-A mod that adds a lunar tier scrap, which can be used in cleansing pools. It also allows you to scrap lunar items.
+Adds a new lunar-tier scrap item that can be used in cleansing pools.
+It also allows you to scrap lunar items and using the Drifter's Tinker (R) ability on lunar items.
 
 ![lunar scrap](https://imgur.com/e07WhP7.png)
 
 ![scrapper](https://imgur.com/uhnY2rI.png)
 
-And adds interactions for Drifter's Tinker abillity.
-
 ![tinker](https://imgur.com/r540kjp.png)
 
 ## Compatibility
 
-These mods are not required for the Lunar Scrap to function, however they extend interactions with Drifter.
+These mods are not required for Lunar Scrap to work, however they significantly enhance Drifter’s interactions and synergies.
 
-- [MoreStats](https://thunderstore.io/package/RiskOfBrainrot/MoreStats/): Drifter's passive inceases luck per lunar scrap (the incease can be configured).
-- [LookingGlass](https://thunderstore.io/package/DropPod/LookingGlass/): If both MoreStats and LookingGlass are installed, the added luck from lunar scraps will be visible in the UI when playing Drifter, plus you'll get a scrap buff icon as you do with the other tiers of scrap.
+- [MoreStats](https://thunderstore.io/package/RiskOfBrainrot/MoreStats/): Drifter's passive increases your luck for each lunar scrap you hold.
+The amount of luck per scrap can be configured in config.
+
+- [LookingGlass](https://thunderstore.io/package/DropPod/LookingGlass/): If both MoreStats and LookingGlass are installed, the added luck from lunar scraps will now be visible in the UI when playing as Drifter. You'll also receive a scrap buff icon (just like with the other tiers of scrap).
 
 ![recycle](https://imgur.com/vyONfcN.png)
 ![lunar buff](https://imgur.com/kPHGTlK.png)
 
 ## Found a bug/issue or you have a suggestion?
 
-- You can message me on Discord @geritos or submit issue/suggestion to the GitHub repo.
+- You can message me on Discord @geritos or submit issue/suggestion to the [GitHub repo](https://github.com/Geritos/LunarScrap).
+
+## Notes
+
+I haven't tested the mod in multiplayer. My guess would be if everyone has the mod with the same config it should be fine.
+
+The mod should still work without the Alloyed Collective DLC, you just won't have access to the whole Drifter part.
 
 ## Credits
 
