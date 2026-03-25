@@ -1,0 +1,10 @@
+{
+  "name": "LunarScrap",
+  "version_number": "1.0.0",
+  "website_url": "",
+  "description": "Adds a lunar tier scrap and it's related Drifter interactions.",
+  "dependencies": [
+    "bbepis-BepInExPack-5.4.2121",
+    "tristanmcpherson-RoR2API-5.0.5",
+  ]
+}
