@@ -21,7 +21,7 @@ internal static class DrifterTrashToTresureHook
     {
         if (body && body.HasBuff(LunarScrapBuffDef))
         {
-            Log.Debug($"Has buff, adding: {Multiplier * body.GetBuffCount(LunarScrapBuffDef)} luck");
+            //Log.Debug($"Has buff, adding: {Multiplier * body.GetBuffCount(LunarScrapBuffDef)} luck");
             args.luckAdd += Multiplier * body.GetBuffCount(LunarScrapBuffDef);
         }
     }

@@ -4,22 +4,23 @@ using HarmonyLib;
 using LunarScrap.Compatibility;
 using LunarScrap.Content;
 using LunarScrap.Hooks;
+using R2API.Utils;
 using RoR2;
 
 namespace LunarScrap;
 
 [BepInPlugin(PluginGUID, PluginName, PluginVersion)]
-[BepInDependency("RiskofThunder-HookGenPatcher-1.2.9", BepInDependency.DependencyFlags.HardDependency)]
-[BepInDependency("RiskofThunder-R2API_Items-1.0.8", BepInDependency.DependencyFlags.HardDependency)]
-[BepInDependency("RiskofThunder-R2API_Language-1.1.0", BepInDependency.DependencyFlags.HardDependency)]
-[BepInDependency("RiskofThunder-R2API_Prefab-1.1.1", BepInDependency.DependencyFlags.HardDependency)]
+[BepInDependency(R2API.ItemAPI.PluginGUID, BepInDependency.DependencyFlags.HardDependency)]
+[BepInDependency(R2API.LanguageAPI.PluginGUID, BepInDependency.DependencyFlags.HardDependency)]
+[BepInDependency(R2API.PrefabAPI.PluginGUID, BepInDependency.DependencyFlags.HardDependency)]
 [BepInDependency(LookingGlass.PluginInfo.PLUGIN_GUID, BepInDependency.DependencyFlags.SoftDependency)]
 [BepInDependency(MoreStats.MoreStatsPlugin.guid, BepInDependency.DependencyFlags.SoftDependency)]
+[NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
 public class LunarScrapPlugin : BaseUnityPlugin
 {
     public const string PluginGUID = PluginAuthor + "." + PluginName;
     public const string PluginAuthor = "Geritos";
-    public const string PluginName = "LunarScrap";
+    public const string PluginName = "Lunar_Scrap";
     public const string PluginVersion = "1.0.0";
 
     private static ConfigFile LunarScrapConfigFile { get; set; }

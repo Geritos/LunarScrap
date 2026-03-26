@@ -28,4 +28,21 @@
     <PackageReference Include="DropPod-LookingGlass" Version="1.15.1" />
     <PackageReference Include="RiskOfBrainrot-MoreStats" Version="1.3.1" />
 	</ItemGroup>
+
+  <!-- Files inside the Thunderstore folder to be copied on Release builds -->
+  <ItemGroup>
+    <ThunderstoreFiles Include="..\Thunderstore\**\*.*" />
+  </ItemGroup>
+
+  <!-- After a Release build, copy the Thunderstore folder contents to the output and place the compiled dll into a LunarScrap folder -->
+  <Target Name="PrepareThunderstoreRelease" AfterTargets="Build" Condition="'$(Configuration)' == 'Release'">
+    <Message Text="Copying Thunderstore contents from '..\Thunderstore' to '$(OutputPath)'" Importance="High" />
+    <MakeDir Directories="$(OutputPath)" />
+    <Copy SourceFiles="@(ThunderstoreFiles)" DestinationFiles="@(ThunderstoreFiles->'$(OutputPath)%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    
+    <Message Text="Deleting debug/supplementary files from output: .pdb and .deps.json" Importance="High" />
+    <!-- Delete the PDB and deps.json produced alongside the DLL in the output directory -->
+    <Delete Files="$(OutputPath)$(TargetName).pdb;$(OutputPath)$(TargetName).deps.json" ContinueOnError="true" />
+  </Target>
+
 </Project>

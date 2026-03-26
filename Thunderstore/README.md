@@ -9,7 +9,7 @@ This mod introduces Lunar-tier Scrap, a new resource specifically designed for u
 
 ## Compatibility
 
-These mods are not required for Lunar Scrap to work, however they significantly enhance Drifter’s interactions and synergies.
+These mods are not required for Lunar Scrap to work, however they enhance Drifter.
 
 - [MoreStats](https://thunderstore.io/package/RiskOfBrainrot/MoreStats/): Drifter's passive increases your luck for each Lunar Scrap you hold.
 The amount of luck per Scrap can be configured in config.
@@ -25,11 +25,11 @@ The amount of luck per Scrap can be configured in config.
 
 ## Notes
 
-I have not tested the mod in multiplayer. My guess would be if everyone has the mod with the same config it should be fine.
+I have not tested the mod in multiplayer. If everyone has the mod with the same config it should be fine.
 
-The mod should still work without the Alloyed Collective DLC, you just cannot  access to the whole Drifter part.
+The mod should still work without the Alloyed Collective DLC, you just cannot  access the whole Drifter part.
 
-Also I have not
+I have not tested all of the temporary Lunars, which can now be obtained by tinkering.
 
 ## Credits
 
