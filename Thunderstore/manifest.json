@@ -1,6 +1,6 @@
 {
   "name": "Lunar_Scrap",
-  "version_number": "1.0.0",
+  "version_number": "1.0.1",
   "website_url": "https://github.com/Geritos/LunarScrap",
   "description": "Adds Lunar Scrap. Use it in Cleansing Pools, scrap unwanted Lunar items at Scrappers, and enjoy the compatibility with Drifter.",
   "dependencies": [

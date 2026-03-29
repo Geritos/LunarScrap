@@ -21,7 +21,7 @@ public class LunarScrapPlugin : BaseUnityPlugin
     public const string PluginGUID = PluginAuthor + "." + PluginName;
     public const string PluginAuthor = "Geritos";
     public const string PluginName = "Lunar_Scrap";
-    public const string PluginVersion = "1.0.0";
+    public const string PluginVersion = "1.0.1";
 
     private static ConfigFile LunarScrapConfigFile { get; set; }
     public static ConfigEntry<float> MultiplierConfig { get; set; }

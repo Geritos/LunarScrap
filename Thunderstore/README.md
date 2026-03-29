@@ -25,7 +25,7 @@ The amount of luck per Scrap can be configured in config.
 
 ## Notes
 
-I have not tested the mod in multiplayer. If everyone has the mod with the same config it should be fine.
+I have tested the mod in multiplayer, everyone had the mod with the same config.
 
 The mod should still work without the Alloyed Collective DLC, you just cannot  access the whole Drifter part.
 
