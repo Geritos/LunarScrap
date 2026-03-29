@@ -22,8 +22,8 @@ internal static class ScrapperLunarDisplayPatch
         foreach (ItemIndex itemIndex in ItemCatalog.lunarItemList)
         {
             ItemDef itemDef = ItemCatalog.GetItemDef(itemIndex);
-            if (itemDef.hidden || !itemDef.canRemove || itemDef == LunarScrapItemDef) continue;
-            if (inv.GetItemCountPermanent(itemDef.itemIndex) == 0) continue;
+            // lunarItemList contains only passive items, so we don't need to check for active ones
+            if (inv.GetItemCountPermanent(itemDef.itemIndex) == 0 || itemDef == LunarScrapItemDef) continue;
 
             PickupIndex pickupIndex = PickupCatalog.FindPickupIndex(itemIndex);
             lunarOptions.Add(new PickupPickerController.Option
