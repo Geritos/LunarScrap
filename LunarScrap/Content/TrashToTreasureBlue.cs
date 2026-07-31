@@ -5,16 +5,16 @@ using UnityEngine;
 
 namespace LunarScrap.Content;
 
-internal static class TrashToTresureBlue
+internal static class TrashToTreasureBlue
 {
-    public static BuffDef LunarScrapBuffDef;
+    internal static BuffDef LunarScrapBuffDef;
 
-    public readonly static float Multiplier = LunarScrapPlugin.MultiplierConfig.Value;
+    internal readonly static float Multiplier = LunarScrapPlugin.MultiplierConfig.Value;
 
-    public static void Init()
+    internal static void Init()
     {
         LunarScrapBuffDef = ScriptableObject.CreateInstance<BuffDef>();
-        LunarScrapBuffDef.name = "TrashToTresureBlue";
+        LunarScrapBuffDef.name = "TrashToTreasureBlue";
         LunarScrapBuffDef.canStack = true;
         LunarScrapBuffDef.isDebuff = false;
         LunarScrapBuffDef.ignoreGrowthNectar = false;

@@ -5,11 +5,11 @@ using System.Runtime.CompilerServices;
 
 namespace LunarScrap.Compatibility;
 
-public static class MoreStatsCompatibility
+internal static class MoreStatsCompatibility
 {
     private static bool? _enabled;
 
-    public static bool Enabled
+    internal static bool Enabled
     {
         get
         {
@@ -19,9 +19,9 @@ public static class MoreStatsCompatibility
     }
 
     [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-    public static void ApplyTrashToTresureHook()
+    internal static void ApplyTrashToTresureHook()
     {
-        TrashToTresureBlue.Init();
-        DrifterTrashToTresureHook.Init();
+        TrashToTreasureBlue.Init();
+        DrifterTrashToTreasureHook.Init();
     }
 }

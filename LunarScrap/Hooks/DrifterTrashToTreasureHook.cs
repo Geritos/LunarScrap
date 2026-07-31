@@ -1,14 +1,14 @@
 ﻿using R2API;
 using RoR2;
 using static LunarScrap.Content.LunarScrapItem;
-using static LunarScrap.Content.TrashToTresureBlue;
+using static LunarScrap.Content.TrashToTreasureBlue;
 using static MoreStats.StatHooks;
 
 namespace LunarScrap.Hooks;
 
-internal static class DrifterTrashToTresureHook
+internal static class DrifterTrashToTreasureHook
 {
-    public static void Init()
+    internal static void Init()
     {
         GetMoreStatCoefficients += ApplyStatBuffs;
         On.RoR2.DrifterTrashToTreasureController.OnInventoryChanged += SetLunarScrapBuff;
@@ -17,7 +17,7 @@ internal static class DrifterTrashToTresureHook
         On.RoR2.Language.SetCurrentLanguage += AppendRecycleDescription;
     }
 
-    public static void ApplyStatBuffs(CharacterBody body, MoreStatHookEventArgs args)
+    private static void ApplyStatBuffs(CharacterBody body, MoreStatHookEventArgs args)
     {
         if (body && body.HasBuff(LunarScrapBuffDef))
         {

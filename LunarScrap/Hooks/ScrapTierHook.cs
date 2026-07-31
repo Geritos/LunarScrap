@@ -5,7 +5,7 @@ namespace LunarScrap.Hooks;
 
 internal static class ScrapTierHook
 {
-    public static void Init()
+    internal static void Init()
     {
         On.RoR2.PickupCatalog.FindScrapIndexForItemTier += HandleLunarScrapping;
     }

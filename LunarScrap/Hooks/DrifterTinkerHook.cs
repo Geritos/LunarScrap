@@ -5,7 +5,7 @@ namespace LunarScrap.Hooks;
 
 internal static class DrifterTinkerHook
 {
-    public static void Init()
+    internal static void Init()
     {
         On.RoR2.DrifterTracker.IsWhitelist += HandleLunarTinker;
         On.RoR2.Util.RollTemporaryItemFromItemIndex += HandleLunarToTemporary;

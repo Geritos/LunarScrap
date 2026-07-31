@@ -9,7 +9,7 @@ public static class LunarScrapItem
 {
     public static ItemDef LunarScrapItemDef;
 
-    public static void Init()
+    internal static void Init()
     {
         LunarScrapItemDef = ScriptableObject.CreateInstance<ItemDef>();
         LunarScrapItemDef.name = "ScrapBlue";
@@ -24,10 +24,9 @@ public static class LunarScrapItem
         LunarScrapItemDef.tags = [ItemTag.Scrap, ItemTag.WorldUnique, ItemTag.Cleansable, ItemTag.AIBlacklist]; // The cleansable tag is not used afaik
         LunarScrapItemDef.canRemove = true;
         LunarScrapItemDef.hidden = false;
-        
-        // 24 pixels per unit for cleansing pool interaction
-        // Maybe I am doing something wrong...
-        LunarScrapItemDef.pickupIconSprite = AssetManagement.LoadSpriteFromResources("iconBlueScrap.png", 24f);
+
+        // Vanilla scrap items use a 128x128 texture with 25 PPU
+        LunarScrapItemDef.pickupIconSprite = AssetManagement.LoadSpriteFromResources("iconBlueScrap.png", 25);
         LunarScrapItemDef.pickupModelPrefab = CreateLunarScrapPickupModel();
 
         ItemAPI.Add(new CustomItem(LunarScrapItemDef, new ItemDisplayRuleDict(null)));

@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using HG;
 using RoR2;
 using static LunarScrap.Content.LunarScrapItem;
 
@@ -9,11 +8,10 @@ namespace LunarScrap.Hooks;
 [HarmonyPatch(typeof(CostTypeCatalog.LunarItemOrEquipmentCostTypeHelper), nameof(CostTypeDef.PayCost))]
 internal static class CleansingPoolPriorityPatch
 {
-    static void Prefix(CostTypeDef.PayCostContext context, CostTypeDef.PayCostResults result)
+    private static void Prefix(CostTypeDef.PayCostContext context, CostTypeDef.PayCostResults result)
     {
-        // I dont really get why they can just ignore the null case (it may be an extension method)
-        // But GearBox probably knows so I'll do it the same way...
-        Inventory inventory = context.activatorBody.AsValidOrNull()?.inventory;
+        Inventory inventory = context.activatorInventory;
+        if (inventory == null) return;
 
         int scrapCount = inventory.GetItemCountPermanent(LunarScrapItemDef.itemIndex);
         if (scrapCount > 0)

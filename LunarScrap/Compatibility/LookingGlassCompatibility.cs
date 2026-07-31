@@ -10,15 +10,15 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using static LunarScrap.Content.LunarScrapItem;
-using static LunarScrap.Content.TrashToTresureBlue;
+using static LunarScrap.Content.TrashToTreasureBlue;
 
 namespace LunarScrap.Compatibility;
 
-public static class LookingGlassCompatibility
+internal static class LookingGlassCompatibility
 {
     private static bool? _enabled;
 
-    public static bool Enabled
+    internal static bool Enabled
     {
         get
         {
@@ -28,7 +28,7 @@ public static class LookingGlassCompatibility
     }
 
     [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-    public static void AddLunarScrapBuffDescription()
+    internal static void AddLunarScrapBuffDescription()
     {
         var en = Language.languagesByName["en"];
         string t2tb = LunarScrapBuffDef.name;
@@ -37,7 +37,7 @@ public static class LookingGlassCompatibility
     }
 
     [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-    public static void AddLunarScrapDescription()
+    internal static void AddLunarScrapDescription()
     {
         ItemStatsDef itemStat = new();
         itemStat.descriptions.Add("Luck: ");
@@ -53,7 +53,7 @@ public static class LookingGlassCompatibility
     }
 
     [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-    public static void LookingGlassPatch()
+    internal static void LookingGlassPatch()
     {
         var asm = AppDomain.CurrentDomain.GetAssemblies().First(a => a.GetName().Name == LookingGlass.PluginInfo.PLUGIN_NAME);
         var target = asm.GetType("LookingGlass.Utils")?.GetMethod(
@@ -79,7 +79,7 @@ public static class LookingGlassCompatibility
 
             return Math.Sign(luckIn) switch
             {
-                1 => floor + 1f - Mathf.Pow(1f - frac, luckIn + 1f),
+                 1 => floor + 1f - Mathf.Pow(1f - frac, luckIn + 1f),
                 -1 => floor + Mathf.Pow(frac, Mathf.Abs(luckIn) + 1f),
                 _ => baseChance
             };
