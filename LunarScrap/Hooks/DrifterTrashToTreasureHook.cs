@@ -47,9 +47,9 @@ internal static class DrifterTrashToTreasureHook
         self.body.SetBuffCount(LunarScrapBuffDef.buffIndex, 0);
     }
 
-    private static void AppendRecycleDescription(On.RoR2.Language.orig_SetCurrentLanguage orig, string newCurrentLanguageName)
+    private static void AppendRecycleDescription(On.RoR2.Language.orig_SetCurrentLanguage orig, string newCurrentLanguageName, bool forceUnloadCurrentLanguage)
     {
-        orig(newCurrentLanguageName);
+        orig(newCurrentLanguageName, forceUnloadCurrentLanguage);
         const string Token = "DRIFTER_RECYCLE_TOOLTIP";
         const string FormatEnd = "</style>";
 

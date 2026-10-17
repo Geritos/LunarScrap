@@ -1,6 +1,7 @@
 ﻿using R2API;
 using RoR2;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using LunarScrap.Utils;
 
 namespace LunarScrap.Content;
@@ -40,6 +41,11 @@ public static class LunarScrapItem
     internal static GameObject CreateLunarScrapPickupModel()
     {
         ItemDef baseScrap = LegacyResourcesAPI.Load<ItemDef>("ItemDefs/ScrapWhite");
-        return PrefabAPI.InstantiateClone(baseScrap.pickupModelPrefab, "PickupBlueScrap", false);
+        GameObject baseModel = baseScrap.pickupModelPrefab;
+        if (!baseModel)
+        {
+            baseModel = Addressables.LoadAssetAsync<GameObject>(baseScrap.pickupModelReference).WaitForCompletion();
+        }
+        return PrefabAPI.InstantiateClone(baseModel, "PickupBlueScrap", false);
     }
 }
