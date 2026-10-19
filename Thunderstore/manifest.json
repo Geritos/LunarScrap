@@ -1,10 +1,10 @@
 {
   "name": "Lunar_Scrap",
-  "version_number": "1.0.2",
+  "version_number": "1.0.3",
   "website_url": "https://github.com/Geritos/LunarScrap",
   "description": "Adds Lunar Scrap. Use it in Cleansing Pools, scrap unwanted Lunar items at Scrappers, and enjoy the compatibility with Drifter.",
   "dependencies": [
-    "bbepis-BepInExPack-5.4.2121",
+    "bbepis-BepInExPack-5.4.2122",
     "RiskofThunder-HookGenPatcher-1.2.9",
     "RiskofThunder-R2API_Items-1.0.8",
     "RiskofThunder-R2API_Language-1.1.0",
