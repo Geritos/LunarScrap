@@ -22,7 +22,7 @@ internal static class LookingGlassCompatibility
     {
         get
         {
-            _enabled ??= Chainloader.PluginInfos.ContainsKey(LookingGlass.PluginInfo.PLUGIN_GUID);
+            _enabled ??= Chainloader.PluginInfos.ContainsKey("droppod.lookingglass");
             return (bool)_enabled;
         }
     }
@@ -31,8 +31,8 @@ internal static class LookingGlassCompatibility
     internal static void AddLunarScrapBuffDescription()
     {
         var en = Language.languagesByName["en"];
-        string t2tb = LunarScrapBuffDef.name;
-        LookingGlassLanguageAPI.SetupToken(en, "NAME_" + t2tb, $"Lunar Trash to Tresure");
+        string t2tb = LunarScrapBuffDef!.name;
+        LookingGlassLanguageAPI.SetupToken(en, "NAME_" + t2tb, $"Lunar Trash to Treasure");
         LookingGlassLanguageAPI.SetupToken(en, "DESCRIPTION_" + t2tb, $"Increase luck by {Multiplier}");
     }
 
@@ -49,7 +49,7 @@ internal static class LookingGlassCompatibility
             List<float> values = [Multiplier * stackCount];
             return values;
         };
-        ItemDefinitions.allItemDefinitions.Add((int)LunarScrapItemDef.itemIndex, itemStat);
+        ItemDefinitions.allItemDefinitions.Add((int)LunarScrapItemDef!.itemIndex, itemStat);
     }
 
     [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]

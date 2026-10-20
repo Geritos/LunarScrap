@@ -15,7 +15,7 @@ internal static class ScrapTierHook
     {
         if (tier == ItemTier.Lunar)
         {
-            return PickupCatalog.FindPickupIndex(LunarScrapItemDef.itemIndex);
+            return PickupCatalog.FindPickupIndex(LunarScrapItemDef!.itemIndex);
         }
 
         return orig(tier);

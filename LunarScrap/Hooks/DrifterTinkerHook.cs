@@ -14,7 +14,7 @@ internal static class DrifterTinkerHook
     private static ItemIndex HandleLunarToTemporary(On.RoR2.Util.orig_RollTemporaryItemFromItemIndex orig, ItemIndex itemIndex)
     {
         // The scrap check is probably not necessary because its handled by IsWhitelist
-        if (PickupCatalog.FindPickupIndex(itemIndex).pickupDef.isLunar && itemIndex != LunarScrapItemDef.itemIndex)
+        if (PickupCatalog.FindPickupIndex(itemIndex).pickupDef.isLunar && itemIndex != LunarScrapItemDef!.itemIndex)
         {
             return itemIndex;
         }
@@ -24,7 +24,7 @@ internal static class DrifterTinkerHook
     private static bool HandleLunarTinker(On.RoR2.DrifterTracker.orig_IsWhitelist orig, DrifterTracker self, ref UniquePickup pickup)
     {
         PickupDef pickupDef = PickupCatalog.GetPickupDef(pickup.pickupIndex);
-        if (pickupDef.itemTier == ItemTier.Lunar && pickup.pickupIndex.itemIndex != LunarScrapItemDef.itemIndex)
+        if (pickupDef.itemTier == ItemTier.Lunar && pickup.pickupIndex.itemIndex != LunarScrapItemDef!.itemIndex)
         {
             return true;
         }

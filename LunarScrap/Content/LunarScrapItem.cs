@@ -8,7 +8,7 @@ namespace LunarScrap.Content;
 
 public static class LunarScrapItem
 {
-    public static ItemDef LunarScrapItemDef;
+    public static ItemDef? LunarScrapItemDef;
 
     internal static void Init()
     {

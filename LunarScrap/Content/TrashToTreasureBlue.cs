@@ -7,9 +7,9 @@ namespace LunarScrap.Content;
 
 internal static class TrashToTreasureBlue
 {
-    internal static BuffDef LunarScrapBuffDef;
+    internal static BuffDef? LunarScrapBuffDef;
 
-    internal readonly static float Multiplier = LunarScrapPlugin.MultiplierConfig.Value;
+    internal readonly static float Multiplier = LunarScrapPlugin.MultiplierConfig!.Value;
 
     internal static void Init()
     {

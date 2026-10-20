@@ -14,16 +14,16 @@ namespace LunarScrap;
 [BepInDependency(ItemAPI.PluginGUID, BepInDependency.DependencyFlags.HardDependency)]
 [BepInDependency(PrefabAPI.PluginGUID, BepInDependency.DependencyFlags.HardDependency)]
 [BepInDependency(LanguageAPI.PluginGUID, BepInDependency.DependencyFlags.HardDependency)]
-[BepInDependency(LookingGlass.PluginInfo.PLUGIN_GUID, BepInDependency.DependencyFlags.SoftDependency)]
-[BepInDependency(MoreStats.MoreStatsPlugin.guid, BepInDependency.DependencyFlags.SoftDependency)]
+[BepInDependency("droppod.lookingglass", BepInDependency.DependencyFlags.SoftDependency)]
+[BepInDependency("com.RiskOfBrainrot.MoreStats", BepInDependency.DependencyFlags.SoftDependency)]
 [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
 public class LunarScrapPlugin : BaseUnityPlugin
 {
-    public const string PluginGUID = PluginAuthor + "." + PluginName;
+    public const string PluginGUID = "Geritos.Lunar_Scrap";
     public const string PluginAuthor = "Geritos";
     public const string PluginName = "Lunar_Scrap";
     public const string PluginVersion = "1.0.3";
-    internal static ConfigEntry<float> MultiplierConfig;
+    internal static ConfigEntry<float>? MultiplierConfig;
 
     public void Awake()
     {
@@ -38,7 +38,8 @@ public class LunarScrapPlugin : BaseUnityPlugin
         DrifterTinkerHook.Init();
 
         var harmony = new Harmony(PluginGUID);
-        harmony.PatchAll();
+        harmony.PatchAll(typeof(CleansingPoolPriorityPatch));
+        harmony.PatchAll(typeof(ScrapperLunarDisplayPatch));
 
         ApplyExtensions();
     }
@@ -47,9 +48,9 @@ public class LunarScrapPlugin : BaseUnityPlugin
     {
         MultiplierConfig = Config.Bind(
             "Lunar Scrap Buff",
-            "Trash To Tresure Blue Buff",
+            "Trash To Treasure Blue Buff",
             0.05f,
-            "Trash to Tresure (Drifter's passive) lunar scrap bonus luck per stack."
+            "Trash to Treasure (Drifter's passive) lunar scrap bonus luck per stack."
         );
     }
 
@@ -57,12 +58,12 @@ public class LunarScrapPlugin : BaseUnityPlugin
     {
         if (MoreStatsCompatibility.Enabled)
         {
-            MoreStatsCompatibility.ApplyTrashToTresureHook();
+            MoreStatsCompatibility.Init();
 
             if (LookingGlassCompatibility.Enabled)
             {
                 LookingGlassCompatibility.LookingGlassPatch();
-                RoR2Application.onLoad = () => 
+                RoR2Application.onLoad += () => 
                 {
                     LookingGlassCompatibility.AddLunarScrapDescription();
                     LookingGlassCompatibility.AddLunarScrapBuffDescription();

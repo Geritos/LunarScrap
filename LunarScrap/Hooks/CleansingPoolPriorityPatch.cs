@@ -13,7 +13,7 @@ internal static class CleansingPoolPriorityPatch
         Inventory inventory = context.activatorInventory;
         if (inventory == null) return;
 
-        int scrapCount = inventory.GetItemCountPermanent(LunarScrapItemDef.itemIndex);
+        int scrapCount = inventory.GetItemCountPermanent(LunarScrapItemDef!.itemIndex);
         if (scrapCount > 0)
         {
             var transform = new Inventory.ItemTransformation
